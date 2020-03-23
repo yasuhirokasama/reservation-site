@@ -12,6 +12,7 @@ class CreateConsultaitons < ActiveRecord::Migration[5.2]
 
       t.timestamps
     end
+    # 以下、indexを張るカラム
     add_index :consultaitons, [:visit_at, :type]
     add_index :consultaitons, :visit_at
     add_index :consultaitons, :type
