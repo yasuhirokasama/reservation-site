@@ -10,22 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_16_112612) do
+ActiveRecord::Schema.define(version: 2020_03_23_110945) do
 
-  create_table "consultaitons", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "consultations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.string "cell_number"
     t.string "tel_number"
     t.string "email"
     t.date "birthday"
     t.integer "sex"
-    t.integer "type", null: false
+    t.integer "visit_type", null: false
     t.datetime "visit_at", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["type"], name: "index_consultaitons_on_type"
-    t.index ["visit_at", "type"], name: "index_consultaitons_on_visit_at_and_type"
-    t.index ["visit_at"], name: "index_consultaitons_on_visit_at"
+    t.index ["visit_at", "visit_type"], name: "index_consultations_on_visit_at_and_visit_type"
+    t.index ["visit_at"], name: "index_consultations_on_visit_at"
+    t.index ["visit_type"], name: "index_consultations_on_visit_type"
   end
 
 end
