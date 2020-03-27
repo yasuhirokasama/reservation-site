@@ -1,6 +1,6 @@
-class CreateConsultaitons < ActiveRecord::Migration[5.2]
+class CreateConsultations < ActiveRecord::Migration[5.2]
   def change
-    create_table :consultaitons do |t|
+    create_table :consultations do |t|
       t.string :name, null: false
       t.string :cell_number
       t.string :tel_number
@@ -12,9 +12,8 @@ class CreateConsultaitons < ActiveRecord::Migration[5.2]
 
       t.timestamps
     end
-    # 以下、indexを張るカラム
-    add_index :consultaitons, [:visit_at, :type]
-    add_index :consultaitons, :visit_at
-    add_index :consultaitons, :type
+    add_index :consultations, [:visit_at, :type]
+    add_index :consultations, :visit_at
+    add_index :consultations, :type
   end
 end

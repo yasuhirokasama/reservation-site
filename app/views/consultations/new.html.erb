@@ -1,0 +1,11 @@
+
+<%= form_with model: @consultation do |form| %>
+  <div><%= form.text_field :name %></div>
+  <div><%= form.text_field :cell_number %></div>
+  <div><%= form.text_field :tel_number %></div>
+  <div><%= form.text_field :email %></div>
+  <div><%= form.date_field :birthday %></div>
+  <div><%= form.number_field :sex %></div>
+  <div><%= form.number_field :type %></div>
+  <div><%= form.date_field :visit_at %></div>
+<% end %>
