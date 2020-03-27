@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 <%= form_with model: @consultation do |form| %>
   <div><%= form.text_field :name %></div>
@@ -8,4 +9,42 @@
   <div><%= form.number_field :sex %></div>
   <div><%= form.number_field :type %></div>
   <div><%= form.date_field :visit_at %></div>
+=======
+<%= form_with model: @consultation do |form| %>
+  <div>
+    <label>名前</label>
+    <%= form.text_field :name %>
+  </div>
+  <div>
+    <label>携帯番号</label>
+    <%= form.text_field :cell_number %>
+  </div>
+  <div>
+    <label>電話番号</label>
+    <%= form.text_field :tel_number %>
+  </div>
+  <div>
+    <label>email</label>
+    <%= form.text_field :email %>
+  </div>
+  <div>
+    <label>生年月日</label>
+    <%= form.date_field :birthday %>
+  </div>
+  <div>
+    <label>性別</label>
+    <%= form.number_field :sex %>
+  </div>
+  <div>
+    <label>診断種別</label>
+    <%= form.number_field :visit_type %>
+  </div>
+  <div>
+    <label>予約日時</label>
+    <%= form.datetime_field :visit_at %>
+  </div>
+  <div>
+    <%= form.submit %>
+  </div>
+>>>>>>> a01221a2d3108f279018e7b2055ef608a89e39e1
 <% end %>

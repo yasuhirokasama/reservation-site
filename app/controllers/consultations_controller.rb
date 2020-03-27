@@ -5,6 +5,17 @@ class ConsultationsController < ApplicationController
   end
 
   def create
+    @consultation = Consultation.new(consultation_params(params))
+    if @consultation.save
+      redirect_to new_consultation_path
+    else
+      render 'new'
+    end
+  end
 
+  private
+
+  def consultation_params(params)
+    params.require(:consultation).permit(:name, :cell_number, :tel_number, :email, :birthday, :sex, :visit_type, :visit_at)
   end
 end

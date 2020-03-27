@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2020_03_26_042549) do
+=======
+ActiveRecord::Schema.define(version: 2020_03_23_110945) do
+>>>>>>> a01221a2d3108f279018e7b2055ef608a89e39e1
 
   create_table "consultations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -19,13 +23,19 @@ ActiveRecord::Schema.define(version: 2020_03_26_042549) do
     t.string "email"
     t.date "birthday"
     t.integer "sex"
-    t.integer "type", null: false
+    t.integer "visit_type", null: false
     t.datetime "visit_at", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+<<<<<<< HEAD
     t.index ["type"], name: "index_consultations_on_type"
     t.index ["visit_at", "type"], name: "index_consultations_on_visit_at_and_type"
     t.index ["visit_at"], name: "index_consultations_on_visit_at"
+=======
+    t.index ["visit_at", "visit_type"], name: "index_consultations_on_visit_at_and_visit_type"
+    t.index ["visit_at"], name: "index_consultations_on_visit_at"
+    t.index ["visit_type"], name: "index_consultations_on_visit_type"
+>>>>>>> a01221a2d3108f279018e7b2055ef608a89e39e1
   end
 
 end
