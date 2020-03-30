@@ -5,6 +5,8 @@ class ConsultationsController < ApplicationController
   end
 
   def create
+    params[:consultation][:visit_at] = "#{params[:consultation][:'visit_date(1i)']}-#{params[:consultation][:'visit_date(2i)']}-#{params[:consultation][:'visit_date(3i)']} #{params[:consultation][:visit_at]}"
+
     @consultation = Consultation.new(consultation_params(params))
     if @consultation.save
       redirect_to new_consultation_path
