@@ -1,0 +1,120 @@
+// Place all the styles related to the Consultations controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.field {
+    width: 850px;
+}
+
+h3 {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 15px;
+}
+
+// ===============================
+// ここから診察希望内容
+.field_type {
+    width: 800px;
+    background-color: #ddf8be;
+    margin: 30px auto;
+}
+
+.field_type .radio_btn {
+    display: none;
+}
+
+// チェックが入っていない時
+.field_type .radio_btn + label {
+    width: 380px;
+    display: inline-block;
+    box-sizing: border-box;
+    font-size: 14px;
+    font-weight: normal;
+    color: #888;
+    border: solid 1px #EDBC6C;
+    border-radius: 5px;
+    margin-top: 10px;
+    padding: 3px 10px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+// チェックが入っている時
+.field_type .radio_btn:checked + label {
+    color: #fff;
+    background-color: #EDBC6C;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+// ここまで診察希望内容
+// ===============================
+
+
+
+// ===============================
+// ここから日時
+.field_visit_at {
+    width: 800px;
+    background-color: #ddf8be;
+    margin: 0 auto;
+}
+
+.field_visit_at .radio_btn {
+    display: none;
+}
+
+// チェックが入っていない時
+.field_visit_at .radio_btn + label {
+    width: 90px;
+    display: inline-block;
+    box-sizing: border-box;
+    font-size: 14px;
+    font-weight: normal;
+    color: #888;
+    border: solid 1px #EDBC6C;
+    border-radius: 5px;
+    margin-top: 10px;
+    padding: 3px 10px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+// チェックが入っている時
+.field_visit_at .radio_btn:checked + label {
+    color: #fff;
+    background-color: #EDBC6C;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+// ここまで日時
+// ===============================
+
+
+
+// ===============================
+// ここから受診者情報
+.field_cliant_info {
+    width: 800px;
+    background-color: #ddf8be;
+    margin: 30px auto;
+}
+
+h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.cliant_name {
+    display: inline-block;
+}
+
+th {
+    width: 200px;
+    font-size: 14px;
+}
+
+td {
+    width: 400px;
+    font-size: 14px;
+}

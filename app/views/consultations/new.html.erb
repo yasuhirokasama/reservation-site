@@ -1,0 +1,138 @@
+<%= form_with model: @consultation do |form| %>
+<div class="field">
+
+    <div class="field_type">
+        <h3>診察希望内容を選択してください</h3>
+            <%= form.radio_button :visit_type, 1, class: "radio_btn" %>
+            <%= form.label '歯科点検', for: 'consultation_visit_type_1' %>
+            <%= form.radio_button :visit_type, 2, class: "radio_btn" %>
+            <%= form.label '歯がしみる', for: 'consultation_visit_type_2' %>
+            <%= form.radio_button :visit_type, 3, class: "radio_btn" %>
+            <%= form.label '親知らずの抜歯', for: 'consultation_visit_type_3' %>
+            <%= form.radio_button :visit_type, 4, class: "radio_btn" %>
+            <%= form.label '虫歯・歯周病予防', for: 'consultation_visit_type_4' %>
+            <%= form.radio_button :visit_type, 5, class: "radio_btn" %>
+            <%= form.label 'ホワイトニング', for: 'consultation_visit_type_5' %>
+            <%= form.radio_button :visit_type, 6, class: "radio_btn" %>
+            <%= form.label 'インプラント施工', for: 'consultation_visit_type_6' %>
+    </div>       
+    <div>
+        <h3>日付を選択してください</h3>
+        <%= form.date_select :visit_date, start_year: 2020, end_year: Time.current.year, use_month_numbers: true %>
+    </div>
+
+
+    <div class="field_visit_at">
+        <h3>時間を選択してください</h3>
+            <%= form.radio_button :visit_at, '9:00', class: "radio_btn", id: '9:00〜' %>
+            <%= form.label '9:00〜', for: '9:00〜' %>
+            <%= form.radio_button :visit_at, '9:30', class: "radio_btn", id: '9:30〜' %>
+            <%= form.label '9:30〜', for: '9:30〜' %>
+            <%= form.radio_button :visit_at, '10:00', class: "radio_btn", id: '10:00〜' %>
+            <%= form.label '10:00〜', for: '10:00〜' %>
+            <%= form.radio_button :visit_at, '10:30', class: "radio_btn", id: '10:30〜' %>
+            <%= form.label '10:30〜', for: '10:30〜' %>
+            <%= form.radio_button :visit_at, '11:00', class: "radio_btn", id: '11:00〜' %>
+            <%= form.label '11:00〜', for: '11:00〜' %>
+            <%= form.radio_button :visit_at, '11:30', class: "radio_btn", id: '11:30〜' %>
+            <%= form.label '11:30〜', for: '11:30〜' %>
+            <%= form.radio_button :visit_at, '12:00', class: "radio_btn", id: '12:00〜' %>
+            <%= form.label '12:00〜', for: '12:00〜' %>
+            <%= form.radio_button :visit_at, '15:00', class: "radio_btn", id: '15:00〜' %>
+            <%= form.label '15:00〜', for: '15:00〜' %>
+            <%= form.radio_button :visit_at, '15:30', class: "radio_btn", id: '15:30〜' %>
+            <%= form.label '15:30〜', for: '15:30〜' %>
+            <%= form.radio_button :visit_at, '16:00', class: "radio_btn", id: '16:00〜' %>
+            <%= form.label '16:00〜', for: '16:00〜' %>
+            <%= form.radio_button :visit_at, '16:30', class: "radio_btn", id: '16:30〜' %>
+            <%= form.label '16:30〜', for: '16:30〜' %>
+            <%= form.radio_button :visit_at, '17:00', class: "radio_btn", id: '17:00〜' %>
+            <%= form.label '17:00〜', for: '17:00〜' %>
+            <%= form.radio_button :visit_at, '17:30', class: "radio_btn", id: '17:30〜' %>
+            <%= form.label '17:30〜', for: '17:30〜' %>
+            <%= form.radio_button :visit_at, '18:00', class: "radio_btn", id: '18:00〜' %>
+            <%= form.label '18:00〜', for: '18:00〜' %>
+            <%= form.radio_button :visit_at, '18:30', class: "radio_btn", id: '18:30〜' %>
+            <%= form.label '18:30〜', for: '18:30〜' %>
+    </div>
+
+    <div class="field_cliant_info">
+        <h2>受診者情報入力</h2>
+            <table border="1">
+                <tr class="cliant_phone_number">
+                    <th>お名前</th>
+                    <td>
+                        <div>
+                            <%= form.label '姓' %>
+                            <%= form.label '（例：山田）' %>
+                            <%= form.text_field :name %>
+                        </div>
+                        <div>
+                            <%= form.label '名' %>
+                            <%= form.label '（例：太郎）' %>
+                            <%= form.text_field :name %>
+                        </div>
+                        <div>
+                            <%= form.label 'せい' %>
+                            <%= form.label '（例：やまだ）' %>
+                            <%= form.text_field :name %>
+                        </div>
+                        <div>
+                            <%= form.label 'めい' %>
+                            <%= form.label '（例：たろう）' %>
+                            <%= form.text_field :name %>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="cliant_phone_number">
+                    <th>電話番号</th>
+                    <td>
+                        <div>
+                            <%= form.label '携帯電話' %>
+                            <%= form.label '（例：09012345678）' %>
+                            <%= form.text_field :cell_number %>
+                        </div>
+                        <div>
+                            <%= form.label '固定電話' %>
+                            <%= form.label '（例：0123456789）' %>
+                            <%= form.text_field :tel_number %>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="cliant_email">
+                    <th>メールアドレス</th>
+                    <td>
+                        <div>
+                            <%= form.label '（例：haishayoyaku@yoyaku.com）' %>
+                            <%= form.text_field :email %>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="cliant_birthday">
+                    <th>生年月日</th>
+                    <td>
+                        <div>
+                            <%= form.date_select :birthday, start_year: 1940, end_year: Time.current.year, use_month_numbers: true %>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>性別</th>
+                    <td>
+                        <div>
+                            <%= form.radio_button :sex, 1 %>
+                            <%= form.label :sex_1, "男" %>
+                            <%= form.radio_button :sex, 2 %>
+                            <%= form.label :sex_2, "女" %>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+
+            <div><%= form.submit "予約を確定する" %></div>
+
+
+    </div>
+
+</div>
+<% end %>

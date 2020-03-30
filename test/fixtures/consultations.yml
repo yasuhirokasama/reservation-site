@@ -3,11 +3,7 @@
 one:
   name: MyString
   cell_number: MyString
-  tel_number: MyString
-  email: MyString
 
 two:
   name: MyString
   cell_number: MyString
-  tel_number: MyString
-  email: MyString

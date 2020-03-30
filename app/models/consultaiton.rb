@@ -1,2 +1,0 @@
-class Consultaiton < ApplicationRecord
-end
