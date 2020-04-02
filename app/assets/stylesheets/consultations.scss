@@ -4,6 +4,7 @@
 
 .field {
     width: 850px;
+    text-align: center;
 }
 
 h3 {
@@ -105,16 +106,21 @@ h2 {
     margin-bottom: 20px;
 }
 
-.cliant_name {
-    display: inline-block;
-}
-
 th {
-    width: 200px;
+    width: 150px;
     font-size: 14px;
 }
 
 td {
-    width: 400px;
+    width: 450px;
     font-size: 14px;
+}
+
+// ここまで受診者情報
+// ===============================
+
+
+.confirm_btn {
+    width: 800px;
+    text-align: center;
 }
