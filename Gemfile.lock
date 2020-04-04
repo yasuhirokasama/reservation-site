@@ -204,7 +204,7 @@ DEPENDENCIES
   rails (~> 5.2.4)
   sass-rails (~> 5.0)
   selenium-webdriver
-  simple_calendar (~> 2.0)
+  simple_calendar (~> 2.3)
   spring
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5)
