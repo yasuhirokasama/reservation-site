@@ -17,21 +17,12 @@
             <%= form.label 'インプラント施工', for: 'consultation_visit_type_6' %>
         </div>   
 
-        # <div>
-        #     <h3>日付を選択してください</h3>
-        #     <%= form.date_select :visit_date, start_year: 2020, end_year: Time.current.year, use_month_numbers: true %>
-        # </div>
-
         <div>
-            <%= month_calendar events: @consultation do |date, consultations| %>
-                <%= date %>
-
-                <% consultations.each do |consultation| %>
-                    <div>
-                        <%= consultation.name %>
-                    </div>
-                <% end %>
-            <% end %>
+          <%= form.hidden_field :visit_date, value: '' %>
+          <%= month_calendar do |date| %>
+            <%= date.strftime("%-m/%-d") %><br />
+            <a href='javascript:void(0)' class='btn-calendar' data-date="<%= date %>">◎</a>
+          <% end %>
         </div>
 
         <div class="field_visit_at">
@@ -147,3 +138,9 @@
         </div>
 
 <% end %>
+
+<script>
+  $('.btn-calendar').click(function() {
+    $('#consultation_visit_date').val($(this).data('date'))
+  })
+</script>
