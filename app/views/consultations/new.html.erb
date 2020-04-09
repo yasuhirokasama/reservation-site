@@ -17,20 +17,11 @@
             <%= form.label 'インプラント施工', for: 'consultation_visit_type_6' %>
         </div>   
 
-        # <div>
-        #     <h3>日付を選択してください</h3>
-        #     <%= form.date_select :visit_date, start_year: 2020, end_year: Time.current.year, use_month_numbers: true %>
-        # </div>
-
-        <div>
-            <%= month_calendar events: @consultation do |date, consultations| %>
-                <%= date %>
-
-                <% consultations.each do |consultation| %>
-                    <div>
-                        <%= consultation.name %>
-                    </div>
-                <% end %>
+        <div class="field_visit_date">
+            <h3>日付を選択してください</h3>
+            <%= form.hidden_field :visit_date, value: '' %>
+            <%= month_calendar do |date| %>
+                <%= date.strftime("%-m/%-d") %><br />
             <% end %>
         </div>
 
@@ -69,45 +60,52 @@
         </div>
 
         <div class="field_cliant_info">
-            <h2>受診者情報入力</h2>
+            <h3>受診者情報入力</h3>
             <table border="1">
                 <tr class="cliant_phone_number">
                     <th>お名前</th>
                     <td>
-                        <div>
-                            <%= form.label '姓' %>
-                            <%= form.label '（例：山田）' %>
-                            <%= form.text_field :name %>
+                        <div class="chara_china">
+                            <div class="last_name">
+                                <%= form.label '姓　' %>
+                                <%= form.text_field :name, :size=>"20", placeholder: "例：山田" %>
+                            </div>
+                            <div class="first_name">
+                                <%= form.label '名　' %>
+                                <%= form.text_field :name, :size=>"20", placeholder: "例：太郎"  %>
+                            </div>
                         </div>
-                        <div>
-                            <%= form.label '名' %>
-                            <%= form.label '（例：太郎）' %>
-                            <%= form.text_field :name %>
-                        </div>
-                        <div>
-                            <%= form.label 'せい' %>
-                            <%= form.label '（例：やまだ）' %>
-                            <%= form.text_field :name %>
-                        </div>
-                        <div>
-                            <%= form.label 'めい' %>
-                            <%= form.label '（例：たろう）' %>
-                            <%= form.text_field :name %>
+                        <div class="chara_japan">
+                            <div class="last_name">
+                                <%= form.label 'せい' %>
+                                <%= form.text_field :name, :size=>"20", placeholder: "例：やまだ" %>
+                            </div>
+                            <div class="first_name">
+                                <%= form.label 'めい' %>
+                                <%= form.text_field :name, :size=>"20", placeholder: "例：たろう" %>
+                            </div>
                         </div>
                     </td>
                 </tr>
                 <tr class="cliant_phone_number">
                     <th>電話番号</th>
+                    <p>確認事項がある場合は、ご入力頂いた電話番号に連絡させて頂く場合がございます。</p>
                     <td>
-                        <div>
-                            <%= form.label '携帯電話' %>
-                            <%= form.label '（例：09012345678）' %>
-                            <%= form.text_field :cell_number %>
+                        <div class="cell_phone">
+                            <div class="devise_name">
+                                <%= form.label '携帯電話' %>
+                            </div>
+                            <div class="number_form"> 
+                                <%= form.text_field :cell_number, :size=>"40px", placeholder: "例：09012345678（-は不要）" %>
+                            </div>
                         </div>
-                        <div>
-                            <%= form.label '固定電話' %>
-                            <%= form.label '（例：0123456789）' %>
-                            <%= form.text_field :tel_number %>
+                        <div class="tel_phone">
+                            <div class="devise_name">
+                                <%= form.label '固定電話' %>
+                            </div>
+                            <div class="number_form">
+                                <%= form.text_field :tel_number, :size=>"40px", placeholder: "例：0123456789（-は不要）" %>
+                            </div>
                         </div>
                     </td>
                 </tr>
@@ -115,8 +113,7 @@
                     <th>メールアドレス</th>
                     <td>
                         <div>
-                            <%= form.label '（例：haishayoyaku@yoyaku.com）' %>
-                            <%= form.text_field :email %>
+                            <%= form.text_field :email, :size=>"40px", placeholder: "例：haishayoyaku@yoyaku.com" %>
                         </div>
                     </td>
                 </tr>

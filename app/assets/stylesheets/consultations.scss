@@ -52,13 +52,25 @@ h3 {
 // ===============================
 
 
+// ===============================
+// ここから診察日
+.field_visit_date {
+    width: 800px;
+    background-color: #ddf8be;
+    margin: 30px auto;
+}
+
+
+// ここまで診察日
+// ===============================
+
 
 // ===============================
 // ここから日時
 .field_visit_at {
     width: 800px;
     background-color: #ddf8be;
-    margin: 0 auto;
+    margin: 30px auto;
 }
 
 .field_visit_at .radio_btn {
@@ -100,6 +112,11 @@ h3 {
     background-color: #ddf8be;
     margin: 30px auto;
 }
+table {
+    width: 750px;
+    margin: 20px auto;
+    text-align: left;
+}
 
 h2 {
     font-size: 20px;
@@ -107,15 +124,44 @@ h2 {
 }
 
 th {
-    width: 150px;
+    width: 250px;
     font-size: 14px;
 }
 
 td {
-    width: 450px;
+    width: 350px;
     font-size: 14px;
 }
 
+.number_form {
+    width: 550px;
+}
+
+.last_name {
+    display: inline-block;
+    margin: 3px 5px;
+}
+
+.first_name {
+    display: inline-block;
+    margin: 3px 10px;
+}
+
+::placeholder {
+    color: #c0bbbb;
+}
+
+.cell_phone {
+    margin: 3px 5px;
+}
+
+.devise_name {
+    margin-bottom: -10px;
+}
+
+.tel_phone {
+    margin: 3px 5px;
+}
 // ここまで受診者情報
 // ===============================
 
