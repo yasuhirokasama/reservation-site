@@ -22,3 +22,8 @@
   nav li {
     display: inline-block;
   }
+
+  .topnavi {
+    width: 80%;
+    color: #00ff00;
+  }
