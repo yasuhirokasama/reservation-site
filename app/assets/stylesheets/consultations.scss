@@ -3,47 +3,78 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .field {
-    width: 850px;
-    text-align: center;
+    width: 750px;
+    margin: 15px auto;
 }
 
 h3 {
     font-size: 18px;
-    font-weight: bold;
-    text-align: center;
-    padding-top: 15px;
+    margin-left: 15px;
 }
+
+small {
+    color: #fff;
+    height: 20px;
+    padding: 2px 5px;
+    background-color: #e94218;
+    border-radius: 2px;
+}
+
 
 // ===============================
 // ここから診察希望内容
 .field_type {
-    width: 800px;
-    background-color: #ddf8be;
+    width: 700px;
     margin: 30px auto;
 }
 
-.field_type .radio_btn {
+.field_type_top {
+    width: 700px;
+    height: 35px;
+    background-color: #99f5b7;
+    display: inline-flex;
+}
+
+.field_type_top h3 {
+    font-weight: bolder;
+    padding: 7px 5px;
+}
+
+.field_type_body {
+    width: 700px;
+    background-color: #ddf8be;
+    text-align: center;
+}
+
+.field_type_body h4 {
+    font-size: 16px;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.radio_btn {
     display: none;
 }
 
 // チェックが入っていない時
-.field_type .radio_btn + label {
-    width: 380px;
+.radio_btn + label {
+    width: 290px;
     display: inline-block;
     box-sizing: border-box;
     font-size: 14px;
     font-weight: normal;
     color: #888;
+    text-align: center;
     border: solid 1px #EDBC6C;
     border-radius: 5px;
-    margin-top: 10px;
+    margin: 10px;
     padding: 3px 10px;
     background-color: #fff;
     cursor: pointer;
 }
 
 // チェックが入っている時
-.field_type .radio_btn:checked + label {
+.radio_btn:checked + label {
     color: #fff;
     background-color: #EDBC6C;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
@@ -53,32 +84,56 @@ h3 {
 
 
 // ===============================
-// ここから診察日
+// ここから予約日時
+// ＜日付＞
 .field_visit_date {
-    width: 800px;
+    width: 700px;
+    margin: 30px auto;
+}
+
+.field_visit_date_top {
+    width: 700px;
+    height: 35px;
+    background-color: #99f5b7;
+    display: inline-flex;
+}
+
+.field_visit_date_top h3 {
+    font-weight: bolder;
+    padding: 7px 5px;
+}
+
+.field_visit_date_body {
+    width: 700px;
+    background-color: #ddf8be;
+    text-align: center;
+}
+
+.field_visit_date_body h4 {
+    font-size: 16px;
+    text-align: center;
+    padding-top: 20px;
+}
+
+// ＜時間＞
+.field_visit_at_body {
+    width: 700px;
     background-color: #ddf8be;
     margin: 30px auto;
 }
 
-
-// ここまで診察日
-// ===============================
-
-
-// ===============================
-// ここから日時
-.field_visit_at {
-    width: 800px;
-    background-color: #ddf8be;
-    margin: 30px auto;
+.field_visit_at_body h4 {
+    font-size: 16px;
+    text-align: center;
+    padding-top: 20px;
 }
 
-.field_visit_at .radio_btn {
+.field_visit_at_body .radio_btn {
     display: none;
 }
 
 // チェックが入っていない時
-.field_visit_at .radio_btn + label {
+.field_visit_at_body .radio_btn + label {
     width: 90px;
     display: inline-block;
     box-sizing: border-box;
@@ -94,13 +149,13 @@ h3 {
 }
 
 // チェックが入っている時
-.field_visit_at .radio_btn:checked + label {
+.field_visit_at_body .radio_btn:checked + label {
     color: #fff;
     background-color: #EDBC6C;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
 }
 
-// ここまで日時
+// ここまで予約日時
 // ===============================
 
 
@@ -108,33 +163,73 @@ h3 {
 // ===============================
 // ここから受診者情報
 .field_cliant_info {
-    width: 800px;
-    background-color: #ddf8be;
+    width: 700px;
     margin: 30px auto;
 }
+
+.field_cliant_info_top {
+    width: 700px;
+    height: 35px;
+    background-color: #99f5b7;
+    display: inline-flex;
+}
+
+.field_cliant_info_top h3 {
+    font-weight: bolder;
+    padding: 7px 5px;
+}
+
+.field_cliant_info_body {
+    width: 700px;
+    height: 800px;
+    background-color: #ddf8be;
+    text-align: center;    
+}
+
+.field_cliant_info_body h4 {
+    font-size: 16px;
+    padding-top: 20px;
+}
+
 table {
-    width: 750px;
+    width: 600px;
     margin: 20px auto;
     text-align: left;
 }
 
-h2 {
-    font-size: 20px;
-    margin-bottom: 20px;
-}
-
 th {
-    width: 250px;
-    font-size: 14px;
+    width: 215px;
+    // font-size: 14px;
+    background-color: #F2F2F2;
 }
 
 td {
-    width: 350px;
+    width: 325px;
     font-size: 14px;
+    background-color: #fff;
 }
 
-.number_form {
-    width: 550px;
+b {
+    margin-left: 15px;
+}
+
+p {
+    font-size: 12px;
+    font-weight: lighter;
+    color: #5f5b5b;
+    margin-left: 15px;
+}
+
+.cliant_name {
+    height: 180px;
+}
+
+.chara_china {
+    margin: 20px 5px;
+}
+
+.chara_japan {
+    margin: 20px 5px;
 }
 
 .last_name {
@@ -151,20 +246,43 @@ td {
     color: #c0bbbb;
 }
 
+.cliant_phone_number {
+    height: 180px;
+}
+
 .cell_phone {
-    margin: 3px 5px;
+    margin: 20px 5px;
+}
+
+.tel_phone {
+    margin: 20px 5px;
 }
 
 .devise_name {
     margin-bottom: -10px;
 }
 
-.tel_phone {
-    margin: 3px 5px;
+.cliant_email {
+    height: 180px;
+}
+
+.address_form {
+    margin: 0 5px;
+}
+
+.cliant_birthday {
+    height: 80px;
+}
+
+.cliant_sex {
+    height: 80px;
 }
 // ここまで受診者情報
 // ===============================
 
+.caution p {
+    text-align: center;
+}
 
 .confirm_btn {
     width: 800px;

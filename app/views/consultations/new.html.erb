@@ -2,31 +2,46 @@
 
     <div class="field">
         <div class="field_type">
-            <h3>診察希望内容を選択してください</h3>
-            <%= form.radio_button :visit_type, 1, class: "radio_btn" %>
-            <%= form.label '歯科点検', for: 'consultation_visit_type_1' %>
-            <%= form.radio_button :visit_type, 2, class: "radio_btn" %>
-            <%= form.label '歯がしみる', for: 'consultation_visit_type_2' %>
-            <%= form.radio_button :visit_type, 3, class: "radio_btn" %>
-            <%= form.label '親知らずの抜歯', for: 'consultation_visit_type_3' %>
-            <%= form.radio_button :visit_type, 4, class: "radio_btn" %>
-            <%= form.label '虫歯・歯周病予防', for: 'consultation_visit_type_4' %>
-            <%= form.radio_button :visit_type, 5, class: "radio_btn" %>
-            <%= form.label 'ホワイトニング', for: 'consultation_visit_type_5' %>
-            <%= form.radio_button :visit_type, 6, class: "radio_btn" %>
-            <%= form.label 'インプラント施工', for: 'consultation_visit_type_6' %>
+            <div class="field_type_top">
+                <h3>診察希望内容</h3>
+                <small>必須</small>
+            </div>
+            <div class="field_type_body">
+                <h4>診察希望内容を選択してください</h4>
+                <%= form.radio_button :visit_type, 1, class: "radio_btn" %>
+                <%= form.label '歯科点検', for: 'consultation_visit_type_1' %>
+                <%= form.radio_button :visit_type, 2, class: "radio_btn" %>
+                <%= form.label '歯がしみる', for: 'consultation_visit_type_2' %>
+                <%= form.radio_button :visit_type, 3, class: "radio_btn" %>
+                <%= form.label '親知らずの抜歯', for: 'consultation_visit_type_3' %>
+                <%= form.radio_button :visit_type, 4, class: "radio_btn" %>
+                <%= form.label '虫歯・歯周病予防', for: 'consultation_visit_type_4' %>
+                <%= form.radio_button :visit_type, 5, class: "radio_btn" %>
+                <%= form.label 'ホワイトニング', for: 'consultation_visit_type_5' %>
+                <%= form.radio_button :visit_type, 6, class: "radio_btn" %>
+                <%= form.label 'インプラント施工', for: 'consultation_visit_type_6' %>
+            </div>
         </div>   
 
         <div class="field_visit_date">
-            <h3>日付を選択してください</h3>
-            <%= form.hidden_field :visit_date, value: '' %>
-            <%= month_calendar do |date| %>
-                <%= date.strftime("%-m/%-d") %><br />
-            <% end %>
+            <div class="field_visit_date_top">
+                <h3>予約日時</h3>
+                <small>必須</small>
+            </div>
+            <div class="field_visit_date_body">
+                <h4>日付を選択してください</h4>
+                <%= form.hidden_field :visit_date, value: '' %>
+
+                <%# ここからsimple_calendar機能 %>
+                <%= month_calendar do |date| %>
+                    <%= date.strftime("%-m/%-d") %><br />
+                <% end %>
+                <%# ここまでsimple_calendar機能 %>
+            </div>
         </div>
 
-        <div class="field_visit_at">
-            <h3>時間を選択してください</h3>
+        <div class="field_visit_at_body">
+            <h4>時間を選択してください</h4>
             <%= form.radio_button :visit_at, '9:00', class: "radio_btn", id: '9:00〜' %>
             <%= form.label '9:00〜', for: '9:00〜' %>
             <%= form.radio_button :visit_at, '9:30', class: "radio_btn", id: '9:30〜' %>
@@ -60,84 +75,110 @@
         </div>
 
         <div class="field_cliant_info">
-            <h3>受診者情報入力</h3>
-            <table border="1">
-                <tr class="cliant_phone_number">
-                    <th>お名前</th>
-                    <td>
-                        <div class="chara_china">
-                            <div class="last_name">
-                                <%= form.label '姓　' %>
-                                <%= form.text_field :name, :size=>"20", placeholder: "例：山田" %>
+            <div class="field_cliant_info_top">
+                <h3>受診者の情報</h3>
+            </div>
+            <div class="field_cliant_info_body">
+                <h4>受診される方（ご本人）についてお知らせください</h4>
+                <table border="1">
+                    <tr class="cliant_name">
+                        <th>
+                            <b>お名前</b>
+                            <small>必 須</small>
+                        </th>
+                        <td class="name_form">
+                            <div class="chara_china">
+                                <div class="last_name">
+                                    <%= form.label '姓　' %>
+                                    <%= form.text_field :name, :size=>"15", placeholder: "例：山田" %>
+                                </div>
+                                <div class="first_name">
+                                    <%= form.label '名　' %>
+                                    <%= form.text_field :name, :size=>"15", placeholder: "例：太郎"  %>
+                                </div>
                             </div>
-                            <div class="first_name">
-                                <%= form.label '名　' %>
-                                <%= form.text_field :name, :size=>"20", placeholder: "例：太郎"  %>
+                            <div class="chara_japan">
+                                <div class="last_name">
+                                    <%= form.label 'せい' %>
+                                    <%= form.text_field :name, :size=>"15", placeholder: "例：やまだ" %>
+                                </div>
+                                <div class="first_name">
+                                    <%= form.label 'めい' %>
+                                    <%= form.text_field :name, :size=>"15", placeholder: "例：たろう" %>
+                                </div>
                             </div>
-                        </div>
-                        <div class="chara_japan">
-                            <div class="last_name">
-                                <%= form.label 'せい' %>
-                                <%= form.text_field :name, :size=>"20", placeholder: "例：やまだ" %>
+                        </td>
+                    </tr>
+                    <tr class="cliant_phone_number">
+                        <th>
+                            <b>電話番号</b><small>どちらか必須</small>
+                            <p>※確認事項がある場合は、<br>ご入力頂いた電話番号に<br>連絡させて頂く場合がございます。</p>
+                        </th>
+                        <td>
+                            <div class="cell_phone">
+                                <div class="devise_name">
+                                    <%= form.label '携帯電話' %>
+                                </div>
+                                <div class="number_form"> 
+                                    <%= form.text_field :cell_number, :size=>"40px", placeholder: "例：09012345678（-は不要）" %>
+                                </div>
                             </div>
-                            <div class="first_name">
-                                <%= form.label 'めい' %>
-                                <%= form.text_field :name, :size=>"20", placeholder: "例：たろう" %>
+                            <div class="tel_phone">
+                                <div class="devise_name">
+                                    <%= form.label '固定電話' %>
+                                </div>
+                                <div class="number_form">
+                                    <%= form.text_field :tel_number, :size=>"40px", placeholder: "例：0123456789（-は不要）" %>
+                                </div>
                             </div>
-                        </div>
-                    </td>
-                </tr>
-                <tr class="cliant_phone_number">
-                    <th>電話番号</th>
-                    <p>確認事項がある場合は、ご入力頂いた電話番号に連絡させて頂く場合がございます。</p>
-                    <td>
-                        <div class="cell_phone">
-                            <div class="devise_name">
-                                <%= form.label '携帯電話' %>
+                        </td>
+                    </tr>
+                    <tr class="cliant_email">
+                        <th>
+                        <b>メールアドレス</b>
+                        </th>
+                        <td>
+                            <div class="address_form">
+                                <%= form.email_field :email, :size=>"40px", placeholder: "例：haishayoyaku@yoyaku.com" %>
                             </div>
-                            <div class="number_form"> 
-                                <%= form.text_field :cell_number, :size=>"40px", placeholder: "例：09012345678（-は不要）" %>
+                            <p>※ドメイン指定受信を設定されている方は、<br>下記ドメインからのメールを受信できる様に設定を<br>お願いします。<br>@haisha-yoyaku.jp<br>
+                            ※こちらからのメールアドレスに予約内容が送信されます。
+                        </td>
+                    </tr>
+                    <tr class="cliant_birthday">
+                        <th>
+                        <b>生年月日</b><small>必須</small>
+                        </th>
+                        <td>
+                            <div>
+                                <%= raw sprintf(form.date_select(:birthday,
+                                                            start_year:        1940,
+                                                            end_year:          Time.current.year, use_month_numbers: true,
+                                                            date_separator:    '%s'),
+                                                            '年', '月') + '日' %>
                             </div>
-                        </div>
-                        <div class="tel_phone">
-                            <div class="devise_name">
-                                <%= form.label '固定電話' %>
+                        </td>
+                    </tr>
+                    <tr class="cliant_sex">
+                        <th>
+                        <b>性別</b><small>必須</small>
+                        </th>
+                        <td>
+                            <div>
+                                <%= form.radio_button :sex, 1 %>
+                                <%= form.label :sex_1, "男" %>
+                                <%= form.radio_button :sex, 2 %>
+                                <%= form.label :sex_2, "女" %>
                             </div>
-                            <div class="number_form">
-                                <%= form.text_field :tel_number, :size=>"40px", placeholder: "例：0123456789（-は不要）" %>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-                <tr class="cliant_email">
-                    <th>メールアドレス</th>
-                    <td>
-                        <div>
-                            <%= form.text_field :email, :size=>"40px", placeholder: "例：haishayoyaku@yoyaku.com" %>
-                        </div>
-                    </td>
-                </tr>
-                <tr class="cliant_birthday">
-                    <th>生年月日</th>
-                    <td>
-                        <div>
-                            <%= form.date_select :birthday, start_year: 1940, end_year: Time.current.year, use_month_numbers: true %>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <th>性別</th>
-                    <td>
-                        <div>
-                            <%= form.radio_button :sex, 1 %>
-                            <%= form.label :sex_1, "男" %>
-                            <%= form.radio_button :sex, 2 %>
-                            <%= form.label :sex_2, "女" %>
-                        </div>
-                    </td>
-                </tr>
-            </table>
+                        </td>
+                    </tr>
+                </table>
+            </div>
         </div>
+
+        <div class="caution">
+            <p>※無断キャンセル・不正等があった場合、サービスの停止・制限を行うことがあります。</p>
+            <p>※利用者様へご連絡がつかない場合、無断キャンセルと同様の扱いとなることがあります。</p>
 
         <div class="confirm_btn">
             <%= form.submit "予約を確定する" %>
