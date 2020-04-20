@@ -14,10 +14,11 @@
  *= require simple_calendar
  *= require_tree .
  *= require_self
+ *= require font_awesome5_webfont
+ *= require font_awesome5
+
 
  */
-
-  *= require font-awesome
 
   nav li {
     display: inline-block;
