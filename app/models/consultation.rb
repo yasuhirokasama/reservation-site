@@ -1,6 +1,6 @@
 class Consultation < ApplicationRecord
 
-    validates :name, present: true
-    validates :email, present: true
-    
+    validates :name, presence: true
+    validates :email, presence: true
+
 end
