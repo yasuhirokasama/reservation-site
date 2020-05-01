@@ -5,7 +5,7 @@ class ConsultationsController < ApplicationController
   end
 
   def create
-    params[:consultation][:visit_at] = "#{params[:consultation][:'visit_date(1i)']}-#{params[:consultation][:'visit_date(2i)']}-#{params[:consultation][:'visit_date(3i)']} #{params[:consultation][:visit_at]}"
+    params[:consultation][:visit_at] = "#{params[:consultation][:'visit_date']} #{params[:consultation][:visit_at]}" # 例: 2020-04-03 9:00
 
     @consultation = Consultation.new(consultation_params(params))
     if @consultation.save
