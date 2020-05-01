@@ -1,7 +1,10 @@
 class CreateConsultations < ActiveRecord::Migration[5.2]
   def change
     create_table :consultations do |t|
-      t.string :name, null: false
+      t.string :first_name, null: false
+      t.string :last_name, null: false
+      t.string :first_name_kana, null: false
+      t.string :last_name_kana, null: false
       t.string :cell_number
       t.string :tel_number
       t.string :email
