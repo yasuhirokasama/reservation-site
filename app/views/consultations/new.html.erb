@@ -8,7 +8,7 @@
             </div>
             <div class="field_type_body">
                 
-                <h4><i class="fa fa-edit"></i>診察希望内容を選択してください</h4>
+                <h4><i class="fa fa-edit fa-lg"></i>診察希望内容を選択してください</h4>
                 <%= form.radio_button :visit_type, 1, class: "radio_btn" %>
                 <%= form.label '歯科点検', for: 'consultation_visit_type_1' %>
                 <%= form.radio_button :visit_type, 2, class: "radio_btn" %>
@@ -30,7 +30,7 @@
                 <small>必須</small>
             </div>
             <div class="field_visit_date_body">
-                <h4>日付を選択してください</h4>
+                <h4><i class="fas fa-calendar-alt fa-lg"></i>日付を選択してください</h4>
                 <%= form.hidden_field :visit_date, value: '' %>
 
                 <%# ここからsimple_calendar機能 %>
@@ -42,7 +42,7 @@
         </div>
 
         <div class="field_visit_at_body">
-            <h4>時間を選択してください</h4>
+            <h4><i class="fas fa-clock fa-spin fa-lg"></i>時間を選択してください</h4>
             <%= form.radio_button :visit_at, '9:00', class: "radio_btn", id: '9:00〜' %>
             <%= form.label '9:00〜', for: '9:00〜' %>
             <%= form.radio_button :visit_at, '9:30', class: "radio_btn", id: '9:30〜' %>
@@ -137,6 +137,7 @@
                     <tr class="cliant_email">
                         <th>
                         <b>メールアドレス</b>
+                        <small>必須</small>
                         </th>
                         <td>
                             <div class="address_form">
