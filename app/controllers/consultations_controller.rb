@@ -9,9 +9,11 @@ class ConsultationsController < ApplicationController
 
     @consultation = Consultation.new(consultation_params)
     if @consultation.save
+      flash[:success] = "予約が完了しました。<br>ご来院をお待ちしております。"
       redirect_to new_consultation_path
     else
       render 'new'
+      flash.now[:alert] = "入力を完了してください"
     end
   end
 
