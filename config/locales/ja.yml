@@ -1,4 +1,17 @@
 ja:
+  activerecord:
+    models:
+      consultation: 予約
+    attributes:
+      consultation:
+        email: メールアドレス
+    errors:
+      models:
+        consultation:
+          attributes:
+            email:
+              blank: を入力してください
+
   date:
     abbr_day_names:
       - 日

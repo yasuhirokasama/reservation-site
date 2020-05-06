@@ -1,5 +1,14 @@
-<%= form_with model: @consultation do |form| %>
+<% if @consultation.errors.present? %>
+  <div class='alert alert-warning'>
+    <ul>
+      <% @consultation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
 
+<%= form_with model: @consultation, local: true do |form| %>
     <div class="field">
         <div class="field_type">
             <div class="field_type_top">
