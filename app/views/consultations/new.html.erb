@@ -1,4 +1,4 @@
-<%= form_with model: @consultation do |form| %>
+<%= form_with model: @consultation, local: true do |form| %>
 
     <% flash.each do |message_type, message| %>
         <div class="alert alert-<%= message_type %>">
@@ -6,6 +6,8 @@
             <%= message2.html_safe %>
         </div>
     <% end %>
+
+    <%= render 'layouts/error_messages', model: form.object %>
 
     <div class="field">
         <div class="field_type">

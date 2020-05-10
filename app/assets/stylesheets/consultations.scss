@@ -317,3 +317,10 @@ p {
     width: 800px;
     text-align: center;
 }
+
+// validatesエラー時の入力催促
+// フォームヘルパーで入力フォームを実装すると、バリデーションに引っ掛かった項目に自動で作られるクラス
+.field_with_errors {
+ background-color: #fcc;
+ padding: 2px;
+}

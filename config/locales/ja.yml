@@ -1,4 +1,40 @@
 ja:
+  activerecord:
+    models:
+      consultation: 予約
+    attributes:
+      consultation:
+        visit_type: 診察希望内容
+        visit_at: 予約日時
+        email: メールアドレス
+        first_name: お名前の名
+        last_name: お名前の姓
+        first_name_kana: お名前のめい
+        last_name_kana: お名前のせい
+        birthday: 生年月日
+        sex: 性別
+    errors:
+      models:
+        consultation:
+          attributes:
+            visit_type:
+              blank: を選択してください
+            visit_at:
+              blank: を選択してください（日付・時間）
+            email:
+              blank: を入力してください
+            first_name:
+              blank: を入力してください
+            last_name:
+              blank: を入力してください
+            first_name_kana:
+              blank: を入力してください
+            last_name_kana:
+              blank: を入力してください
+            birthday:
+              blank: を選択してください
+            sex:
+              blank: を選択してください
   date:
     abbr_day_names:
       - 日
