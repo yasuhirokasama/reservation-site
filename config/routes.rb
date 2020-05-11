@@ -3,4 +3,10 @@ Rails.application.routes.draw do
   root 'consultations#new'
 
   resources :consultations, only: [:new, :create]
+
+  devise_for :administrators
+
+  namespace :admin do
+    resources :consultations
+  end
 end
