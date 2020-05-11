@@ -29,11 +29,20 @@
 class Consultation < ApplicationRecord
   validates :visit_type, presence: true
   validates :visit_at, presence: true
-  validates :email, presence: true
+  validates :last_name, presence: true
   validates :first_name, presence: true
   validates :first_name_kana, presence: true
-  validates :last_name, presence: true
   validates :last_name_kana, presence: true
+  validates :cell_number_or_tel_number, presence: true
+  # validates :cell_number, presence: true, if: -> { tel_number.blank? }
+  # validates :tel_number, presence: true, if: -> { cell_number.blank? }
+  validates :email, presence: true
   validates :birthday, presence: true
   validates :sex, presence: true
+
+  private
+  def cell_number_or_tel_number
+    cell_number.presence or tel_number.presence
+  end
+  
 end

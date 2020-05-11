@@ -303,24 +303,49 @@ p {
     height: 80px;
 }
 
+.birthday_form {
+    margin: 0 5px;
+}
+
 .cliant_sex {
     height: 80px;
 }
+
+.sex_form {
+    margin: 0 5px;
+    display: inline-flex;
+}
+
+.man {
+    font-size: 16px;
+    padding-right: 20px;
+}
+
+.woman {
+    font-size: 16px;
+}
+
 // ここまで受診者情報
 // ===============================
 
 .caution p {
     text-align: center;
+    margin-bottom: 5px;
 }
 
 .confirm_btn {
     width: 800px;
     text-align: center;
+    margin: 25px 0;
 }
 
 // validatesエラー時の入力催促
 // フォームヘルパーで入力フォームを実装すると、バリデーションに引っ掛かった項目に自動で作られるクラス
 .field_with_errors {
- background-color: #fcc;
- padding: 2px;
+    background-color: #e01111;
+    padding: 2px;
+}
+
+.alert {
+    text-align: center;
 }

@@ -6,11 +6,14 @@ ja:
       consultation:
         visit_type: 診察希望内容
         visit_at: 予約日時
-        email: メールアドレス
         first_name: お名前の名
         last_name: お名前の姓
         first_name_kana: お名前のめい
         last_name_kana: お名前のせい
+        cell_number_or_tel_number: 携帯電話番号または固定電話番号
+        cell_number: 携帯電話番号
+        tel_number: 固定電話番号
+        email: メールアドレス
         birthday: 生年月日
         sex: 性別
     errors:
@@ -21,8 +24,6 @@ ja:
               blank: を選択してください
             visit_at:
               blank: を選択してください（日付・時間）
-            email:
-              blank: を入力してください
             first_name:
               blank: を入力してください
             last_name:
@@ -30,6 +31,14 @@ ja:
             first_name_kana:
               blank: を入力してください
             last_name_kana:
+              blank: を入力してください
+            cell_number_or_tel_number:
+              blank: を入力してください
+            cell_number:
+              blank: を入力してください
+            tel_number:
+              blank: を入力してください
+            email:
               blank: を入力してください
             birthday:
               blank: を選択してください

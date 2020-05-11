@@ -15,7 +15,7 @@ class ConsultationsController < ApplicationController
 
     @consultation = Consultation.new(consultation_params)
     if @consultation.save
-      flash[:success] = '予約が完了しました。<br>ご来院をお待ちしております。'
+      flash[:success] = '予約が完了しました。（入力されたメールアドレスに予約内容を送信しました。）<br>ご来院をお待ちしております。'
       redirect_to new_consultation_path
     else
       flash.now[:alert] = @consultation.errors.full_messages.join("<br>")
