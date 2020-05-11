@@ -46,7 +46,7 @@
                 <% end %>
                 <%# ここまでsimple_calendar機能 %>
             </div>
-            <p>【ご注意】毎週水曜日は定休日となりますので、ご予約は出来ません。</p>
+            <p>【ご注意】毎週水曜日は休診日となりますので、ご予約は出来ません。</p>
         </div>
 
         <div class="field_visit_at_body">
@@ -134,7 +134,7 @@
                             </div>
                             <div class="tel_phone">
                                 <div class="devise_name">
-                                    <%= form.label '固定電話' %>
+                                    <%= form.label '固定電話（市外局番からご入力ください）' %>
                                 </div>
                                 <div class="number_form">
                                     <%= form.text_field :tel_number, :size=>"40px", placeholder: "例：0123456789（-は不要）" %>
@@ -167,7 +167,8 @@
                                 <%= raw sprintf(form.date_select(:birthday,
                                                             start_year:        1940,
                                                             end_year:          Time.current.year, use_month_numbers: true,
-                                                            date_separator:    '%s'),
+                                                            date_separator:    '%s',
+                                                            prompt:"--"),
                                                             '年', '月') + '日' %>
                             </div>
                         </td>

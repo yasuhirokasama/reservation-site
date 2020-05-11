@@ -36,8 +36,6 @@ class Consultation < ApplicationRecord
   validates :first_name_kana, presence: true
   validates :last_name_kana, presence: true
   validates :cell_number_or_tel_number, presence: true
-  # validates :cell_number, presence: true, if: -> { tel_number.blank? }
-  # validates :tel_number, presence: true, if: -> { cell_number.blank? }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true,
                     format: {with: VALID_EMAIL_REGEX},

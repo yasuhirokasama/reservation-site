@@ -40,6 +40,7 @@ ja:
               blank: を入力してください
             email:
               blank: を入力してください
+              invalid: の形式が不正です
             birthday:
               blank: を選択してください
             sex:
