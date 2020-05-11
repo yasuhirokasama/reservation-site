@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .field {
-    width: 750px;
+    width: 700px;
     margin: 15px auto;
 }
 
@@ -15,6 +15,7 @@ h3 {
 small {
     color: #fff;
     height: 20px;
+    margin-left: 10px;
     padding: 2px 5px;
     background-color: #e94218;
     border-radius: 2px;
@@ -133,6 +134,12 @@ small {
 }
 .day_selected {
     background-color: #EDBC6C !important;
+}
+
+.field_visit_date p {
+    text-align: center;
+    font-weight: bolder;
+    color: red;
 }
 
 // ＜時間＞
@@ -330,7 +337,7 @@ p {
 
 .caution p {
     text-align: center;
-    margin-bottom: 5px;
+    margin-bottom: 2px;
 }
 
 .confirm_btn {
@@ -342,10 +349,12 @@ p {
 // validatesエラー時の入力催促
 // フォームヘルパーで入力フォームを実装すると、バリデーションに引っ掛かった項目に自動で作られるクラス
 .field_with_errors {
+    display: inline;
     background-color: #e01111;
     padding: 2px;
 }
 
 .alert {
-    text-align: center;
+    width: 700px;
+    margin: 15px auto;
 }

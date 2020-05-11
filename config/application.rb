@@ -16,6 +16,9 @@ module RsvApp
 
     config.i18n.default_locale = :ja
 
+    # 下記は、バリデーションエラーとなった箇所に対しrailsが自動的にfield_with_errorsと言うクラスをもつdivタグを挿入してくれる機能に対し、自動挿入を防ぐための記述
+    config.action_view.field_error_proc = Proc.new { |html_tag, instance| html_tag }
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading

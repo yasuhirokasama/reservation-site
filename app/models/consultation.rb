@@ -27,6 +27,8 @@
 #
 # test
 class Consultation < ApplicationRecord
+  before_save { self.email = email.downcase }
+
   validates :visit_type, presence: true
   validates :visit_at, presence: true
   validates :last_name, presence: true
@@ -36,7 +38,11 @@ class Consultation < ApplicationRecord
   validates :cell_number_or_tel_number, presence: true
   # validates :cell_number, presence: true, if: -> { tel_number.blank? }
   # validates :tel_number, presence: true, if: -> { cell_number.blank? }
-  validates :email, presence: true
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  validates :email, presence: true,
+                    format: {with: VALID_EMAIL_REGEX},
+                    uniqueness: {case_sensitive: false}
+  # validates :email_confirmation, presence: true
   validates :birthday, presence: true
   validates :sex, presence: true
 
@@ -44,5 +50,5 @@ class Consultation < ApplicationRecord
   def cell_number_or_tel_number
     cell_number.presence or tel_number.presence
   end
-  
+
 end

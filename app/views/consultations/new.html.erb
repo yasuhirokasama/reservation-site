@@ -7,16 +7,14 @@
         </div>
     <% end %>
 
-    <%= render 'layouts/error_messages', model: form.object %>
 
     <div class="field">
         <div class="field_type">
             <div class="field_type_top">
                 <h3>診察希望内容</h3>
-                <small>必須</small>
+                <small>必 須</small>
             </div>
             <div class="field_type_body">
-                
                 <h4><i class="fa fa-edit fa-lg"></i>診察希望内容を選択してください</h4>
                 <%= form.radio_button :visit_type, 1, class: "radio_btn" %>
                 <%= form.label '歯科点検', for: 'consultation_visit_type_1' %>
@@ -36,7 +34,7 @@
         <div class="field_visit_date">
             <div class="field_visit_date_top">
                 <h3>予約日時</h3>
-                <small>必須</small>
+                <small>必 須</small>
             </div>
             <div class="field_visit_date_body">
                 <h4><i class="fas fa-calendar-alt fa-lg"></i>日付を選択してください</h4>
@@ -48,6 +46,7 @@
                 <% end %>
                 <%# ここまでsimple_calendar機能 %>
             </div>
+            <p>【ご注意】毎週水曜日は定休日となりますので、ご予約は出来ません。</p>
         </div>
 
         <div class="field_visit_at_body">
@@ -146,7 +145,7 @@
                     <tr class="cliant_email">
                         <th>
                         <b>メールアドレス</b>
-                        <small>必須</small>
+                        <small>必 須</small>
                         </th>
                         <td>
                             <div class="address_form">
@@ -154,11 +153,14 @@
                             </div>
                             <p>※ドメイン指定受信を設定されている方は、<br>下記ドメインからのメールを受信できる様に設定を<br>お願いします。<br>@haisha-yoyaku.jp<br>
                             ※こちらからのメールアドレスに予約内容が送信されます。
+                            <div class="address_form">
+                                <%= form.email_field :email_confirmation, :size=>"40px", placeholder: "メールアドレスを再入力してください" %>
+                            </div>
                         </td>
                     </tr>
                     <tr class="cliant_birthday">
                         <th>
-                        <b>生年月日</b><small>必須</small>
+                        <b>生年月日</b><small>必 須</small>
                         </th>
                         <td>
                             <div class="birthday_form">
@@ -172,7 +174,7 @@
                     </tr>
                     <tr class="cliant_sex">
                         <th>
-                        <b>性別</b><small>必須</small>
+                        <b>性別</b><small>必 須</small>
                         </th>
                         <td>
                             <div class="sex_form">
