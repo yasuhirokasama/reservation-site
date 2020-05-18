@@ -20,8 +20,26 @@
 
  */
 
+  nav ul {
+    display: table;
+    margin: 0 auto;
+    padding: 0;
+    width: 80%;
+    text-align: center;
+  }
+
   nav li {
-    display: inline-block;
+    display: table-cell;
+    min-width: 50px;
+  }
+
+  nav a {
+    color: #000000;
+    text-decoration: none;
+  }
+
+  nav li:hover{
+    border-bottom: 3px solid #dff518;
   }
 
   .topnavi {

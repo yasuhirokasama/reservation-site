@@ -41,6 +41,7 @@ ja:
             email:
               blank: を入力してください
               invalid: の形式が不正です
+              taken: が既に使用されています
             birthday:
               blank: を選択してください
             sex:
