@@ -38,8 +38,8 @@ class Consultation < ApplicationRecord
   validates :cell_number_or_tel_number, presence: true
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true,
-                    format: {with: VALID_EMAIL_REGEX},
-                    uniqueness: {case_sensitive: false}
+                    format: {with: VALID_EMAIL_REGEX}
+                    # uniqueness: {case_sensitive: false}
   # validates :email_confirmation, presence: true
   validates :birthday, presence: true
   validates :sex, presence: true
